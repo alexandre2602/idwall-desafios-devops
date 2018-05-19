@@ -17,21 +17,21 @@ a imagem do vagrant para Ubuntu 16.04 e configurações de rede.
 - A máquina que vai executar o ansible foi testada utilizando `Ubuntu 16.04`
  com upgrade atualizado em 18/05/2018 
 
-Para instalar os pacotes necessários, criei um script que auxilia a ter os pacotes exatos.
-Basta executar o script bootstrap.sh que está localizado no diretório:
-`/idwall-desafios-devops/scripts`  e pronto.
-
-```
-cd idwall-desafios-devops/
-./scripts/bootstrap.sh
-```
-
-
 ### Subindo o cluster
 Para subir o cluster, clone este repositório em um diretório de trabalho.
 
 ```
 git clone git@github.com:rodimes/idwall-desafios-devops.git
+```
+
+Para instalar os pacotes necessários, criei um script que auxilia a ter os pacotes exatos.
+Basta executar o script bootstrap.sh que está localizado no diretório:
+`/idwall-desafios-devops/scripts`  e pronto.
+Isso irá garantir que esta utilizando as mesmas versão que utilizei para teste.
+
+```
+cd idwall-desafios-devops/
+./scripts/bootstrap.sh
 ```
 
 Após clonar o repo, mude para o diretório de trabalho `ansible` e configure o arquivo hosts.
