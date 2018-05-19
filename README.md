@@ -235,7 +235,7 @@ kubernetes_cluster_ip: 52.201.62.234
 ```  
 Nesta caso testei criar uma instance AWS do tipo t2.medium.
 
-Utilizando a t.micro free tier não funcionou.
+Utilizando a t2.micro free tier não funcionou.
 
 Também não consegui expor o LoadBalancer na AWS, mesmo seguindo a documentação do kubernetes:
 
