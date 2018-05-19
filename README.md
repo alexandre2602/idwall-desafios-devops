@@ -41,7 +41,7 @@ vi hosts
 ``` 
 ```
 [legadasa_wordpress]
-172.42.42.11 ansible_user=<Nome do usuario ssh> ansible_ssh_private_key_file="$(pwd)/.vagrant/machines/legadasa-wordpress/virtualbox/private_key"
+172.42.42.11 ansible_user=<Nome do usuario ssh> ansible_ssh_private_key_file="$RAIZ_PROJETO/.vagrant/machines/legadasa-wordpress/virtualbox/private_key"
 
 
 
@@ -56,7 +56,7 @@ De: `ansible_user=` para: `ansible_user=vagrant`
 
 ```
 [legadasa_wordpress]
-172.42.42.11 ansible_user=vagrant ansible_ssh_private_key_file="$(pwd)/.vagrant/machines/legadasa-wordpress/virtualbox/private_key"
+172.42.42.11 ansible_user=vagrant ansible_ssh_private_key_file="$RAIZ_PROJETO/.vagrant/machines/legadasa-wordpress/virtualbox/private_key"
 
 [legadasa_wordpress:vars]
 ansible_python_interpreter=/usr/bin/python3
@@ -64,6 +64,7 @@ ansible_python_interpreter=/usr/bin/python3
 ``` 
 
 *** Observação: *** Note que no meu caso o ansible_ssh_private_key_file é o Path que o vagrant criou a chave de acesso ssh.
+Esta chave é criada na raiz do projeto dentro do diretório .vagrant
 
 
 Após alterar o arquivo hosts, mude para a raiz do diretório de trabalho e execute `./run.sh`
