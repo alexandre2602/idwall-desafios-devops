@@ -1,0 +1,6 @@
+[legadasa_wordpress]
+172.42.42.11 ansible_user=<Nome do usuario ssh> ansible_ssh_private_key_file="Path com o caminho e nome da chave privada para acesso ssh"
+
+
+[legadasa_wordpress:vars]
+ansible_python_interpreter=/usr/bin/python3
