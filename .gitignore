@@ -7,3 +7,5 @@
 /ubuntu-xenial-16.04-cloudimg-console.log
 /ansible/ubuntu-xenial-16.04-cloudimg-console.log
 /scripts/.bootstrap.sh.swp
+*admin.conf
+*provisioning.retry
