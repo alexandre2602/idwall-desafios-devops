@@ -41,7 +41,8 @@ vi hosts
 ``` 
 ```
 [legadasa_wordpress]
-172.42.42.11 ansible_user=<Nome do usuario ssh> ansible_ssh_private_key_file="Path com o caminho e nome da chave privada para acesso ssh"
+172.42.42.11 ansible_user=<Nome do usuario ssh> ansible_ssh_private_key_file="$(pwd)/.vagrant/machines/legadasa-wordpress/virtualbox/private_key"
+
 
 
 [legadasa_wordpress:vars]
@@ -53,11 +54,9 @@ Para subir o cluster utilizando o `Vagrant`, modifique os seguintes campos:
 De: `ansible_user=` para: `ansible_user=vagrant`
 
 
-De: `ansible_ssh_private_key_file=` para `ansible_ssh_private_key_file="/home/rodrigo/development/projects/pessoal/idwall-desafios-devops/.vagrant/machines/legadasa-wordpress/virtualbox/private_key"`
-
 ```
 [legadasa_wordpress]
-172.42.42.11 ansible_user=vagrant ansible_ssh_private_key_file="/home/rodrigo/development/projects/pessoal/idwall-desafios-devops/.vagrant/machines/legadasa-wordpress/virtualbox/private_key"
+172.42.42.11 ansible_user=vagrant ansible_ssh_private_key_file="$(pwd)/.vagrant/machines/legadasa-wordpress/virtualbox/private_key"
 
 [legadasa_wordpress:vars]
 ansible_python_interpreter=/usr/bin/python3
@@ -233,6 +232,15 @@ E também alterar o arquivo all.yml que está no diretório `idwall-desafios-dev
 
 ---
 kubernetes_cluster_ip: 52.201.62.234
-
 ```  
+Nesta caso testei criar uma instance AWS do tipo t2.medium.
+
+Utilizando a t.micro free tier não funcionou.
+
+Também não consegui expor o LoadBalancer na AWS, mesmo seguindo a documentação do kubernetes:
+
+https://kubernetes.io/docs/concepts/cluster-administration/cloud-providers/
+
+Por este motivo não configurei esta parte. Mas em breve mesmo após o desafio, irei finalizar este tipo de configuração
+
 
