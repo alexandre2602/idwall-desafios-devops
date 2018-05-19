@@ -1,0 +1,5 @@
+---
+- hosts: legadasa_wordpress
+  roles:
+    - kubernetes-base
+    - kubernetes-master
