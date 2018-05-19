@@ -1,0 +1,38 @@
+---
+- name: 'Validando se o comando kubeadmin init ja foi executado '
+  stat: path='/etc/kubernetes/admin.conf'
+  register: file
+
+- name: Executando kubeadm init
+  become: yes
+  command: "kubeadm init --token 2f1a31.00f66dec74fd53f3 --apiserver-advertise-address={{ kubernetes_cluster_ip}}"
+  when: file.stat.exists == False
+
+- name: Copiando arquivos de configuração e deployment para o diretorio /usr/local/bin/
+  become: yes
+  copy:
+    src: files/
+    dest: /usr/local/bin/
+    owner: root
+    group: root
+    mode: 0755
+
+- name: 'Copiando arquivo de template do servico da aplicacao web wordpress'
+  become: yes
+  template:
+    src: templates/web/wordpress-service.yml.j2
+    dest: '/usr/local/bin/application/web/wordpress-service.yml'
+    owner: root
+    group: root
+    mode: 0755
+
+- name: Executando start-weave
+  shell: . /usr/local/bin/start-weave.sh
+
+- name: Executando conf-single-cluster
+  shell: . /usr/local/bin/conf-single-cluster.sh
+  ignore_errors: yes
+
+- name: Executando deplyoment do database mysql e aplicação wordpress
+  shell: . /usr/local/bin/deployment-application.sh
+  ignore_errors: yes
