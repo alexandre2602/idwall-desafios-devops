@@ -146,7 +146,7 @@ wordpress-mysql   ClusterIP      None             <none>         3306/TCP       
 ### Escalando a aplicação
 Para fazer auto scaling da aplicação, execute o seguinte comando de exemplo:
 
-** Antes: **
+Antes: 
 ```
 vagrant@ubuntu-xenial:~$ kubectl get pod
 NAME                              READY     STATUS    RESTARTS   AGE
@@ -154,12 +154,12 @@ wordpress-7bdfd5557c-vtp6m        1/1       Running   0          1h
 wordpress-mysql-bcc89f687-797br   1/1       Running   0          1h
 
 ```
-** Scale: **
+Scale: 
 ```
 kubectl scale deployment wordpress --replicas=2
 ```
 
-** Depois: **
+Depois: 
 ```
 vagrant@ubuntu-xenial:~$ kubectl get pod
 NAME                              READY     STATUS    RESTARTS   AGE
