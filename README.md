@@ -17,7 +17,7 @@ a imagem do vagrant para Ubuntu 16.04 e configurações de rede.
 - A máquina que vai executar o ansible foi testada utilizando `Ubuntu 16.04`
  com upgrade atualizado em 18/05/2018 
 
-Para instalar os pacotes necessário, criei um script que auxilia a ter os pacotes exatos.
+Para instalar os pacotes necessários, criei um script que auxilia a ter os pacotes exatos.
 Basta executar o script bootstrap.sh que está localizado no diretório:
 `/idwall-desafios-devops/scripts`  e pronto.
 
@@ -67,7 +67,7 @@ ansible_python_interpreter=/usr/bin/python3
 *** Observação: *** Note que no meu caso o ansible_ssh_private_key_file é o Path que o vagrant criou a chave de acesso ssh.
 
 
-Após alterar o arquivo hosts, mude para a raiz dp diretório de trabalho e execute `./run.sh`
+Após alterar o arquivo hosts, mude para a raiz do diretório de trabalho e execute `./run.sh`
 
 ```
 cd idwall-desafios-devops/
